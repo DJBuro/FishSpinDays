@@ -1,0 +1,19 @@
+﻿@model IEnumerable<UserShortViewModel>
+@{
+    ViewData["Title"] = "All Users";
+}
+
+<h2 class="text-center">All Users</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.First().UserName)</th>
+            <th>@Html.DisplayNameFor(m => m.First().Email)</th>  
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.DisplayForModel()
+    </tbody>
+</table>

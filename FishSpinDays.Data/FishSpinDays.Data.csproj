@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20180818080600_AddSectionsPublicationsComments.cs" />
+    <Compile Remove="Migrations\20180818082117_AddSectionsWithPublicationsWithComments.cs" />
+    <Compile Remove="Migrations\20180818083049_AddSectionsWithPublicationsWithComments.cs" />
+    <Compile Remove="Migrations\20180818083219_AddSectionsWithPublicationsWithComments.cs" />
+    <Compile Remove="Migrations\20180821163411_MainSection.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FishSpinDays.Models\FishSpinDays.Models.csproj" />
+  </ItemGroup>
+
+</Project>

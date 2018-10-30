@@ -1,0 +1,14 @@
+﻿@model IEnumerable<PublicationShortViewModel>
+@{
+    ViewData["Title"] = "Fishing trips";
+}
+
+<div class="row">
+    <div class="col-xs-10">
+
+        <h2 class="text-center">All publications  this month 2018 year</h2>
+        @Html.DisplayForModel()
+        
+    </div>
+    <partial name="_RightPartialIndex" />
+</div>

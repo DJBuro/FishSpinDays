@@ -1,0 +1,30 @@
+﻿@model PartPublicationsViewModel
+@*@model IEnumerable<PublicationShortViewModel>*@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<h1 class="text-center">Spin Fishing - stories, tackle, lures and events</h1>
+<h4 class="text-center">
+    A place where all who's passion is spinning fishing can share their fishing adventures.
+    Here you can receives information about many fishing actions and events,
+    and everybody cangives his opinion about fishing technic and tackes.
+    In Addiitional - here you can see how pro prepare your's own fishing lure or to show upurs lures.
+</h4><br />
+
+<div class="row">
+    <div class="col-xs-10">
+
+        <h2 class="text-center">The latest publications</h2>
+
+        @Html.DisplayFor(m => m.Publications)
+
+
+        <partial name="_Pagination" />
+
+    </div>
+    <partial name="_RightPartialIndex" />
+</div>
+
+

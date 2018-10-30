@@ -1,0 +1,22 @@
+﻿@model SectionDetailsViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2 class="text-center">All publications for section: @Model.Name</h2>
+
+<div class="jumbotron jumbotron-fluid">
+
+    @if (!Model.Publications.Any())
+    {
+        <p>No publications yet. </p>
+    }
+       
+    @Html.DisplayFor(m => m.Publications)
+
+    <div class="text-center">
+        <a asp-area="Identity" asp-controller="Publications" asp-action="Add" class="btn btn-primary ">
+            <i class="glyphicon glyphicon-plus"></i> Create new publication
+        </a>
+    </div>
+</div>

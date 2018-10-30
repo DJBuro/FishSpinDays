@@ -1,0 +1,32 @@
+﻿@page "{id}"
+@model DetailsModel
+@{
+}
+<div class="text-center">
+    <h3><strong> All publications by </strong>@Model.UserModel.UserName</h3>    
+</div>
+
+<div class="jumbotron jumbotron-fluid">
+
+    @if (!Model.UserModel.Publications.Any())
+    {
+        <p>No publications yet. </p>
+    }
+
+    @foreach (var publication in Model.UserModel.Publications)
+    {
+        <p>
+            <a asp-area="" asp-controller="Publications" asp-action="Details"
+               asp-route-id="@publication.Id" class="col-lg-12 col-lg-offset-1">
+                <i class="glyphicon glyphicon-arrow-right"></i> @publication.Title
+            </a>
+            <div class="text-center">
+                by @publication.Author,
+                date: @publication.CreationDate.ToString("dd.MM.yyyy"), @publication.Likes <small> likes</small>
+            , @publication.Comments.Count <small> comments</small>
+            </div>
+        </p>
+    }
+</div>
+
+<p class="text-center"><strong>Email: </strong>@Model.UserModel.Email</p>

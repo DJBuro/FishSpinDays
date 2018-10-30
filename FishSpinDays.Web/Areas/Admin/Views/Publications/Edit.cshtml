@@ -1,0 +1,28 @@
+﻿@model PublicationBindingModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2 class="text-center">Edit of publication "@Model.Title" <small>by</small> @Model.Author</h2>
+
+
+<div class="jumbotron jumbotron-fluid">
+    <form method="post">
+
+        <input type="hidden" asp-for="@Model.Author" />
+              
+        @Html.DisplayForModel()
+     
+        <div class="form-group row  text-center">
+            <input asp-page-handler="CreatePublication" type="submit" value="Edit publication" class="btn btn-primary" />
+            <a href="/" class="btn btn-outline-dark ">Cancel</a>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+

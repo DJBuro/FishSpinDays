@@ -1,0 +1,20 @@
+﻿@model FishSpinDays.Common.Admin.ViewModels.UserDetailsViewModel
+
+<div class="text-center">
+    <p><strong>Username: </strong>@Model.UserName</p>
+    <p><strong>Email: </strong><a href="mailto://@Model.Email">@Model.Email</a></p>
+    <strong><b>Publicatuins:</b> </strong>
+</div>
+
+<div class="jumbotron jumbotron-fluid">
+
+    @if (!Model.Publications.Any())
+    {
+        <p>No publications yet. </p>
+    }
+        
+    @Html.DisplayFor(m => m.Publications)
+
+</div>
+
+

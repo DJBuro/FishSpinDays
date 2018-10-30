@@ -1,0 +1,24 @@
+﻿@model MainSectionDetailsViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2 class="text-center">All sections of main section: @Model.Name</h2>
+
+<div class="jumbotron jumbotron-fluid">
+
+    @if (!Model.Sections.Any())
+    {
+        <p>No sections yet. </p>
+    }
+
+    @Html.DisplayFor(m => m.Sections)
+
+    <div class="text-center">
+        <a asp-area="Admin" asp-controller="Sections" asp-action="Create" asp-route-id="@Model.Id"
+           class="btn btn-primary ">
+            <i class="glyphicon glyphicon-plus"></i> Create new section
+        </a>
+    </div>
+</div>
+
